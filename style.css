@@ -1,0 +1,25 @@
+body
+{
+background-size: cover;
+}
+
+.heading
+{
+    font-size: 28px;
+    width: 100%;
+    margin: 0;
+    font-family:sans-serif;
+}
+
+.note
+{
+    color: rgb(230, 181, 255);
+    font-size: 19px;
+    font-family: cursive;
+}
+
+#name
+{
+font-size: 21px;
+margin: 15px;
+}
