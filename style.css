@@ -23,3 +23,18 @@ background-size: cover;
 font-size: 21px;
 margin: 15px;
 }
+
+.play_button,.stop_button
+{
+    width:130px;
+    font-size: 25px;
+}
+
+canvas
+{
+    border-radius: 20px;
+    border-width: 5px;
+    border-style: dotted;
+    border-color: rgb(83, 0, 104);
+    margin-top: 170px;
+}
