@@ -22,11 +22,23 @@ function setup()
 function draw()
 {
     image(video,0,0,600,500);
+    fill("#FF0000");
+    stroke("#FF0000");
+    circle(leftWristX,leftWristY,20);
+    if(scoreLeftWrist>0.2)
+    {
+    circle(leftWristY,leftWristX,20);
+    InNumberLeftWristY=Number(leftWristY);
+    remove_decimals=floor(InNumberLeftWristY);
+    song=remove_decimals/500;
+    document.getElementById("song").inerHTML="song ="+
+    song.setSong(music.mp3);
+    }
 }
 
 function preload()
 {
-    song=loadSound("music.mp3");
+    song=loadSound("music2.mp3.mp3");
 }
 
 function play()
@@ -52,6 +64,9 @@ if (results.length>0)
 
     scoreRightWrist=results[0].pose.keypoints[10].score;
     scoreleftWrist=results[0].pose.keypoints[9].score;
+
+    scoreleftWrist=results[0].pose.keypoints[9].score;
+    console.log("scoreLeftWrist ="+scoreLeftWrist);
 
     console.log("scoreLeftWrist="+scoreLeftWrist+"scoreRightWrist="+scoreRightWrist);
 
