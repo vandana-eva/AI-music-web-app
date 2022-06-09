@@ -1,13 +1,8 @@
 var song="";
 
-scoreRightWrist=0;
-scoreLeftWrist=0;
-
-rightWristX=0;
-rightWristY=0;
-
-leftWristY=0;
-leftWristX=0;
+noseX=0;
+noseY=0;
+scoreNose=0;
 
 function setup()
 {
@@ -24,16 +19,18 @@ function draw()
     image(video,0,0,600,500);
     fill("#FF0000");
     stroke("#FF0000");
-    circle(leftWristX,leftWristY,20);
-    if(scoreLeftWrist>0.2)
-    {
-    circle(leftWristY,leftWristX,20);
-    InNumberLeftWristY=Number(leftWristY);
-    remove_decimals=floor(InNumberLeftWristY);
-    song=remove_decimals/500;
-    document.getElementById("song").inerHTML="song ="+
-    song.setSong(music.mp3);
-    }
+    circle(noseX,noseY,20);
+
+		if(noseY >0 && noseY <= 250)
+		{
+			document.getElementById("name");		
+			song.play(music.mp3);
+		}
+		else if(noseY >250 && noseY <= 500)
+		{
+			document.getElementById("name");		
+		  song.play(music2.mp3.mp3);
+		}
 }
 
 function preload()
@@ -62,23 +59,12 @@ if (results.length>0)
 {
     console.log(results);
 
-    scoreRightWrist=results[0].pose.keypoints[10].score;
-    scoreleftWrist=results[0].pose.keypoints[9].score;
+    scoreNose=results[0].pose.keypoints[10].score;
 
-    scoreleftWrist=results[0].pose.keypoints[9].score;
-    console.log("scoreLeftWrist ="+scoreLeftWrist);
+    noseX=results[0].pose.nose.x;
+    nosetY=results[0].pose.nose.y;
 
-    console.log("scoreLeftWrist="+scoreLeftWrist+"scoreRightWrist="+scoreRightWrist);
-
-    leftWristX=results[0].pose.leftWrist.x;
-    leftWristY=results[0].pose.leftWrist.y;
-
-    console.log("leftWristX="+leftWristX+", leftWristY="+leftWristY);
-
-    rightWristX=results[0].pose.rightWrist.x;
-    rightWristY=results[0].pose.rightWrist.y;
-
-    console.log("rightWristX="+rightWristX+", rightWristY="+rightWristY);
+    console.log("noseX="+noseX+", noseY="+nosetY);
 }
 }
 
